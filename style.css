@@ -1,0 +1,118 @@
+body {
+    background: #0f172a;
+    font-family: 'Segoe UI', sans-serif;
+    color: #e2e8f0;
+}
+
+.navbar {
+    background: #111827 !important;
+    border-bottom: 2px solid #2563eb;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.sensor-card,
+.status-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 18px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.sensor-card:hover,
+.status-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(37,99,235,0.25);
+}
+
+.sensor-card {
+    overflow: hidden;
+    position: relative;
+}
+
+.sensor-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background: #2563eb;
+}
+
+.sensor-card h5 {
+    color: #94a3b8;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.sensor-card h2 {
+    color: #60a5fa;
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.sensor-card small {
+    color: #cbd5e1;
+}
+
+.status-card h4 {
+    color: #f8fafc;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.status-card p {
+    color: #cbd5e1;
+}
+
+.badge {
+    font-size: 0.95rem;
+    padding: 8px 12px;
+}
+
+#lastUpdate {
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+#tempStatus,
+#humStatus,
+#luxStatus,
+#mqStatus {
+    margin-top: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #f8fafc;
+}
+
+canvas {
+    margin-top: 15px;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
