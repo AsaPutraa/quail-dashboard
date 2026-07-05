@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quail Cage IoT Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-dark shadow">
+    <div class="container">
+        <span class="navbar-brand mb-0 h1">
+            🐣 Quail Cage IoT Dashboard
+        </span>
+    </div>
+</nav>
+
+<div class="container py-4">
+
+    <div class="row g-4">
+
+        <div class="col-md-3">
+            <div class="card sensor-card">
+                <div class="card-body text-center">
+
+                    <h5>Suhu</h5>
+
+                    <h2 id="temperature">--</h2>
+
+                    <small>°C</small>
+
+                    <p id="tempStatus" class="mt-2 fw-semibold">
+                        🟢 NORMAL
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card sensor-card">
+                <div class="card-body text-center">
+
+                    <h5>Kelembaban</h5>
+
+                    <h2 id="humidity">--</h2>
+
+                    <small>%</small>
+
+                    <p id="humStatus" class="mt-2 fw-semibold">
+                        🟢 NORMAL
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card sensor-card">
+                <div class="card-body text-center">
+
+                    <h5>Cahaya</h5>
+
+                    <h2 id="lux">--</h2>
+
+                    <small>Lux</small>
+
+                    <p id="luxStatus" class="mt-2 fw-semibold">
+                        ⚫ GELAP
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card sensor-card">
+                <div class="card-body text-center">
+
+                    <h5>MQ135</h5>
+
+                    <h2 id="mq135">--</h2>
+
+                    <small>Air Quality</small>
+
+                    <p id="mqStatus" class="mt-2 fw-semibold">
+                        🟢 BAIK
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row mt-4">
+
+        <div class="col-md-6">
+            <div class="card status-card">
+                <div class="card-body">
+
+                    <h4>Status Perangkat</h4>
+
+                    <p>
+                        Fan :
+                        <span id="fan" class="badge bg-secondary">
+                            --
+                        </span>
+                    </p>
+
+                    <p>
+                        Lamp :
+                        <span id="lamp" class="badge bg-secondary">
+                            --
+                        </span>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+<div class="col-md-6">
+    <div class="card status-card">
+        <div class="card-body">
+
+        <h4>Last Update</h4>
+
+        <p id="lastUpdate">
+            Menunggu data...
+        </p>
+
+        <div class="row g-2 mt-2">
+
+            <div class="col-md-6">
+                <input
+                    type="date"
+                    id="downloadDate"
+                    class="form-control">
+            </div>
+
+            <div class="col-md-6">
+                <button
+                    id="downloadCsv"
+                    class="btn btn-success w-100">
+                    Download CSV
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</div>
+
+
+<div class="row mt-4">
+
+    <div class="col-md-6">
+        <div class="card status-card">
+            <div class="card-body">
+
+                <h4>Grafik Suhu Harian</h4>
+
+                <canvas id="tempChart"></canvas>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card status-card">
+            <div class="card-body">
+
+                <h4>Grafik Kelembaban Harian</h4>
+
+                <canvas id="humChart"></canvas>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row mt-4">
+
+    <div class="col-md-6">
+        <div class="card status-card">
+            <div class="card-body">
+
+                <h4>Grafik Intensitas Cahaya</h4>
+
+                <canvas id="luxChart"></canvas>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card status-card">
+            <div class="card-body">
+
+                <h4>Grafik MQ135 (Amonia)</h4>
+
+                <canvas id="mqChart"></canvas>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script type="module" src="js/firebase-config.js"></script>
+<script type="module" src="js/dashboard.js"></script>
+
+</body>
+</html>
